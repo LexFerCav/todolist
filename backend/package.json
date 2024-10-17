@@ -1,0 +1,23 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "to do list",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "npx ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/index"
+  },
+  "author": "Alexandre Ferreira Cavalcante",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
+  }
+}

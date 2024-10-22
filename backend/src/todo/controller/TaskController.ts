@@ -27,3 +27,18 @@ export async function createTask(
     return response.status(500).json({ message: "Internal server error" });
   }
 }
+export async function updateTask(
+  request: Request,
+  response: Response
+): Promise<any> {
+  const repository = new TaskRepository();
+  try {
+    const id = request.params.id;
+    const body = request.body;
+    const data = await repository.updateTask(id, request.body);
+    return response.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    return response.status(500).json({ message: "Internal server error" });
+  }
+}

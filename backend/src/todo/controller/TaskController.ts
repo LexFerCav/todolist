@@ -42,3 +42,17 @@ export async function updateTask(
     return response.status(500).json({ message: "Internal server error" });
   }
 }
+export async function deleteTask(
+  request: Request,
+  response: Response
+): Promise<any> {
+  const repository = new TaskRepository();
+  try {
+    const id = request.params.id;
+    const data = await repository.deleteTask(id);
+    return response.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    return response.status(500).json({ message: "Internal server error" });
+  }
+}

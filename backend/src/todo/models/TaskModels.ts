@@ -13,6 +13,10 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 export const TaskModel = mongoose.model("Task", taskSchema);
